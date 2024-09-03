@@ -1,0 +1,49 @@
+/* Page-specific styles */
+body {
+    padding-top: 60px; /* Adjusted for reduced navbar height */
+  }
+  .navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030; /* Ensures navbar stays on top */
+  }
+  .heading-container {
+    margin-top: 0; /* Removed margin to eliminate space between navbar and heading */
+    margin-bottom: 20px; /* Optional: decrease margin below heading as well */
+  }
+  .content-wrapper {
+    padding-bottom: 60px; /* Space for footer */
+  }
+  .form-control {
+    border-radius: 0.5rem;
+  }
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  .footer-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .footer-link:hover {
+    text-decoration: underline;
+    color: #007bff;
+  }
+  footer {
+    border-top: 1px solid #e4e4e4;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+  
