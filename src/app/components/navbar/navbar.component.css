@@ -1,4 +1,6 @@
 /* Navbar styling */
+
+@import "bootstrap/dist/css/bootstrap.min.css";
 .navbar {
   background-color: #f8f9fa;
   box-shadow: 0 4px 2px -2px gray;
@@ -15,3 +17,4 @@
   font-family: 'Cinzel', serif;
   font-weight: bold;
 }
+
