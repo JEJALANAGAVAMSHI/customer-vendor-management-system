@@ -5,13 +5,13 @@
         <p class="text-center">By continuing, you agree to Urban Unite's <a href="#" class="text-decoration-none">Terms of Service</a> and acknowledge Urban Unite's <a href="#" class="text-decoration-none">Privacy Policy</a>.</p>
         <form (ngSubmit)="onLogin()">
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Username" required>
+            <input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="user.username" required>
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Email" required>
+            <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" required>
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" placeholder="Password" required>
+            <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" required>
           </div>
           <button type="submit" class="btn btn-danger w-100">Log In</button>
         </form>
