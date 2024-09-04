@@ -29,7 +29,7 @@ import { CustomerregisterComponent } from './components/customerregister/custome
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
