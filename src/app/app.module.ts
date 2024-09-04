@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
+import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AddBusinessComponent } from './components/addbusiness/addbusiness.compo
     HomeComponent,
     BusinessRegisterComponent,
     LoginComponent,
-    AddBusinessComponent
+    AddBusinessComponent,
+    CustomerregisterComponent
   ],
   imports: [
     BrowserModule,

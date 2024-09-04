@@ -1,28 +1,37 @@
-/* Page-specific styles */
 body {
-    padding-top: 60px; /* Adjusted for reduced navbar height */
-  }
-  .navbar {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1030; /* Ensures navbar stays on top */
-  }
-  .form-control {
-    border-radius: 0.5rem;
-  }
-  .btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  .btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-  }
-  .text-danger {
-    color: #dc3545 !important;
-  }
-  
+  padding-top: 60px; /* Adjusted for reduced navbar height */
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030; /* Ensures navbar stays on top */
+}
+
+.form-control {
+  border-radius: 0.5rem;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.urban-unite-font {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+}
+
