@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
-import { provideHttpClient } from '@angular/common/http';
+import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { provideHttpClient } from '@angular/common/http';
     BusinessRegisterComponent,
     LoginComponent,
     AddBusinessComponent,
+    CustomerregisterComponent
   ],
   imports: [
     BrowserModule,
