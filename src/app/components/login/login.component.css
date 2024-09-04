@@ -1,5 +1,6 @@
 body {
   padding-top: 60px; /* Adjusted for reduced navbar height */
+  font-family: Arial, sans-serif; /* Add a default font */
 }
 
 .navbar {
@@ -35,3 +36,17 @@ body {
   font-weight: bold;
 }
 
+.container {
+  height: 100vh; /* Ensure the container takes up the full viewport height */
+}
+
+.row {
+  justify-content: center; /* Center the row horizontally */
+}
+
+.col-md-4 {
+  background-color: white; /* Optional: Add a background color for contrast */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}

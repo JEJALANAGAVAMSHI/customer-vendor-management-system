@@ -11,6 +11,7 @@ import { BusinessRegisterComponent } from './components/businessregister/busines
 import { LoginComponent } from './components/login/login.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
+import { provideHttpClient } from '@angular/common/http';
 
 
 @NgModule({
