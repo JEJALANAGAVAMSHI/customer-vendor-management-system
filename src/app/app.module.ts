@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
@@ -30,7 +30,8 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

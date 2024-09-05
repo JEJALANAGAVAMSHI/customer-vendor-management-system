@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginUser } from '../../models/login-user';
 import { LoginUserService } from '../../services/login-user.service';
 
@@ -14,8 +15,33 @@ export class LoginComponent {
     email: '',
     password: ''
   }
+  submitted=false;
+  registerForm: FormGroup = null!;
 
-  constructor(private authService: LoginUserService) { }
+  constructor(private authService: LoginUserService, private fb:FormBuilder) { }
+
+  ngOnInit(){
+    this.registerForm = this.fb.group({
+      email: ['',[Validators.required,Validators.email]],
+      password: ['',[Validators.required]],
+      username: ['',[Validators.required]]
+    })
+  }
+
+  validateControl(input: string){
+    return this.registerForm.get(input)?.invalid &&
+    (this.registerForm.get(input)?.touched ||
+    this.registerForm.get(input)?.dirty)
+  }
+  validateControlError(input:string,errorType: string){
+    return this.registerForm.get(input)?.hasError(errorType) &&
+    (this.registerForm.get(input)?.touched ||
+    this.registerForm.get(input)?.dirty)
+  }
+
+  OnSubmit(){
+    console.log(this.registerForm.value)
+  }
 
   onLogin() {
     this.authService.loginUser(this.user)
