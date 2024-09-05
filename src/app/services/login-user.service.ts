@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthResponseDto } from '../models/authResponseDto';
 import { LoginUser } from '../models/login-user';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -12,4 +13,5 @@ export class LoginUserService {
   public loginUser = ( body: LoginUser) => {
     return this.http.post<AuthResponseDto>(this.baseUrl, body);
   }
+ 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginUser } from '../../models/login-user';
 import { LoginUserService } from '../../services/login-user.service';
 
@@ -48,11 +49,13 @@ export class LoginComponent {
       .subscribe(
         response => {
           console.log('Login successful');
-          console.log('Token:', response.token);
+          console.log('Token:', response.value.token);
+          console.log('Role:', response.value.roles);
         },
         error => {
           console.error('Login failed', error);
         }
       );
+      
   }
 }
