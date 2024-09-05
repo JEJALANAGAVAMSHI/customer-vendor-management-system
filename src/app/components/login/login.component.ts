@@ -52,20 +52,8 @@ export class LoginComponent {
           console.log('Login successful');
           console.log('Token:', response.value.token);
           console.log('Role:', response.value.roles);
-          const userRole = response.value.roles[0];
-          switch (userRole) {
-            case 'Admin':
-              this.router.navigate(['/admindashboard']);
-              break;
-            case 'Vendor':
-              this.router.navigate(['/vendordashboard']);
-              break;
-            case 'Customer':
-              this.router.navigate(['/customerdashboard']);
-              break;
-            default:
-              this.router.navigate(['/login']); // Redirect to login or an error page
-          }
+          
+          
         },
         error => {
           console.error('Login failed', error);
