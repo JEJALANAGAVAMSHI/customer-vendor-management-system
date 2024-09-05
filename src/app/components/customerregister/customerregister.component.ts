@@ -8,10 +8,10 @@ import { RegisterCustomerService } from '../../services/register-customer.servic
   styleUrl: './customerregister.component.css'
 })
 export class CustomerregisterComponent {
-  user : RegisterCustomer={
+  customer : RegisterCustomer={
     userName:  '',
     email: '',
-    password: '',
+    passwordHash: '',
     phoneNumber : '',
     address : '',
     state : '',
@@ -20,8 +20,8 @@ export class CustomerregisterComponent {
 
   constructor(private registerCustomerService: RegisterCustomerService) { }
 
-  onLogin() {
-    this.registerCustomerService.RegisterCustomer(this.user)
+  onRegister() {
+    this.registerCustomerService.RegisterCustomer(this.customer)
       .subscribe(
         response => {
           console.log('Login successful');
