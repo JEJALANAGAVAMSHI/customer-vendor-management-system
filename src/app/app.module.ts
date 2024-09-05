@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { provideHttpClient } from '@angular/common/http';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { provideHttpClient } from '@angular/common/http';
     BusinessRegisterComponent,
     LoginComponent,
     AddBusinessComponent,
-    CustomerregisterComponent
+    CustomerregisterComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
