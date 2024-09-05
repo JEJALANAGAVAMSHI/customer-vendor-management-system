@@ -13,6 +13,8 @@ import { AddBusinessComponent } from './components/addbusiness/addbusiness.compo
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { provideHttpClient } from '@angular/common/http';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
+import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
     LoginComponent,
     AddBusinessComponent,
     CustomerregisterComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    VendordashboardComponent,
+    CustomerdashboardComponent
   ],
   imports: [
     BrowserModule,
