@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiResponse } from '../../models/apiResponse';
 import { RegisterCustomer } from '../../models/registerCustomer';
 import { RegisterCustomerService } from '../../services/register-customer.service';
 
@@ -23,11 +24,12 @@ export class CustomerregisterComponent {
   onRegister() {
     this.registerCustomerService.RegisterCustomer(this.customer)
       .subscribe(
-        response => {
-          console.log('Login successful');
+        
+        (response : ApiResponse)=> {
+          console.log('Registration successful');
         },
         error => {
-          console.error('Login failed', error);
+          console.error('Registration failed', error);
         }
       );
   }

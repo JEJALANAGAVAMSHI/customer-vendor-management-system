@@ -11,29 +11,36 @@
         </p>
         <form>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Username" required>
+            <input type="text" class="form-control" placeholder="Username" 
+            [(ngModel)]="vendor.userName" name="username" required>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Address" required>
+            <input type="text" class="form-control" placeholder="Address" 
+            [(ngModel)]="vendor.address" name="address"required>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" placeholder="State" required>
+              <input type="text" class="form-control" placeholder="State"
+              [(ngModel)]="vendor.state" name="state" required>
             </div>
             <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" placeholder="Postcode" required>
+              <input type="text" class="form-control" placeholder="Postcode"
+              [(ngModel)]="vendor.postalCode" name="postalcode" required>
             </div>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Phone number" required>
+            <input type="text" class="form-control" placeholder="Phone number"
+            [(ngModel)]="vendor.phoneNumber" name="phonenumber" required>
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Enter email address" required>
+            <input type="email" class="form-control" placeholder="Enter email address"
+            [(ngModel)]="vendor.email" name="email" required>
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" placeholder="Password" required>
+            <input type="password" class="form-control" placeholder="Password"
+            [(ngModel)]="vendor.passwordHash" name="passwordHash" required>
           </div>
-          <button type="submit" class="btn btn-danger w-100">Register</button>
+          <button type="submit" class="btn btn-danger w-100" (click)="onRegister()">Register</button>
         </form>
         <p class="text-center mt-3">Already have an account? <a href="#" class="text-primary text-decoration-none">Log in</a></p>
       </div>
