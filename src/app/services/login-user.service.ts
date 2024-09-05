@@ -12,6 +12,8 @@ export class LoginUserService {
 
   private baseUrl = 'http://localhost:5000/api/auth'; 
 
+  private role = '';
+
   constructor(private http: HttpClient, private router: Router) {}
 
   // Method to handle user login
@@ -21,6 +23,7 @@ export class LoginUserService {
         tap(response => {
           if (response && response.value && response.value.token) {
             localStorage.setItem('token', response.value.token); 
+            this.role = response.value.roles[0]
             this.redirectBasedOnRole(response.value.roles[0]); 
           }
         })
@@ -28,17 +31,10 @@ export class LoginUserService {
   }
 
 
-  getUserRoleFromToken(): string | null {
-    const token = localStorage.getItem('token');
-    if (!token) return null;
-
-    try {
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      return decodedToken?.role || null;
-    } catch (error) {
-      console.error('Error decoding token:', error);
-      return null;
-    }
+  getUserRoleFromToken(token:string): string | null {
+    
+    return this.role;
+    
   }
 
   private redirectBasedOnRole(role: string): void {
