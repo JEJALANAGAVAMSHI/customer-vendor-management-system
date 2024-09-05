@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginUser } from '../../models/login-user';
 import { LoginUserService } from '../../services/login-user.service';
@@ -19,7 +20,7 @@ export class LoginComponent {
   submitted=false;
   registerForm: FormGroup = null!;
 
-  constructor(private authService: LoginUserService, private fb:FormBuilder) { }
+  constructor(private authService: LoginUserService, private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(){
     this.registerForm = this.fb.group({
@@ -51,6 +52,20 @@ export class LoginComponent {
           console.log('Login successful');
           console.log('Token:', response.value.token);
           console.log('Role:', response.value.roles);
+          const userRole = response.value.roles[0];
+          switch (userRole) {
+            case 'Admin':
+              this.router.navigate(['/admindashboard']);
+              break;
+            case 'Vendor':
+              this.router.navigate(['/vendordashboard']);
+              break;
+            case 'Customer':
+              this.router.navigate(['/customerdashboard']);
+              break;
+            default:
+              this.router.navigate(['/login']); // Redirect to login or an error page
+          }
         },
         error => {
           console.error('Login failed', error);
