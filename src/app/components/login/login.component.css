@@ -1,6 +1,6 @@
 body {
-  padding-top: 60px; /* Adjusted for reduced navbar height */
-  font-family: Arial, sans-serif; /* Add a default font */
+  padding-top: 60px; 
+  font-family: Arial, sans-serif; 
 }
 
 .navbar {
@@ -10,7 +10,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1030; /* Ensures navbar stays on top */
+  z-index: 1030; 
 }
 
 .form-control {
@@ -49,4 +49,10 @@ body {
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.error-message {
+  text-align: center;
+  margin-bottom: 10px; /* Adjust margin as needed */
+  color: #e42437;
 }

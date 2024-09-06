@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginUser } from '../../models/login-user';
 import { LoginUserService } from '../../services/login-user.service';
 
@@ -15,10 +17,11 @@ export class LoginComponent {
     email: '',
     password: ''
   }
+  errorMessage: string = '';
   submitted=false;
   registerForm: FormGroup = null!;
 
-  constructor(private authService: LoginUserService, private fb:FormBuilder) { }
+  constructor(private authService: LoginUserService, private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(){
     this.registerForm = this.fb.group({
@@ -48,11 +51,15 @@ export class LoginComponent {
       .subscribe(
         response => {
           console.log('Login successful');
-          console.log('Token:', response.token);
+          console.log('Token:', response.value.token);
+          console.log('Role:', response.value.roles);
+          this.errorMessage = '';
+          
         },
         error => {
-          console.error('Login failed', error);
+          this.errorMessage = error
         }
       );
+      
   }
 }
