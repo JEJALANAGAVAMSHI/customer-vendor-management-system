@@ -1,33 +1,37 @@
 body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    /* font-family: 'Cinzel', serif; */
+    color: #333;
 }
 
 .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: #e9ecef;
+    background-color: #343a40;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    /* margin-top: 60px; */
+    color: #fff;
+    overflow-y: auto;
 }
 
 .sidebar h5 {
-    color: rgb(230, 77, 77);
+    color: #e9ecef;
     text-align: center;
     margin-bottom: 30px;
 }
 
 .sidebar a {
-    color: black;
+    color: #e9ecef;
     padding: 15px 20px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar h5 {
+    font-family: 'Cinzel', serif;
 }
 
 .sidebar a:hover {
@@ -39,9 +43,33 @@ body {
     padding: 20px;
 }
 
+.navbar {
+    background-color: rgb(230, 77, 77);;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.nav-link {
+    font-size: medium;
+}
+
 .card {
     margin-bottom: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.chart-card {
+    height: 300px;
+    width: 100%;
 }
 
 .btn-primary {
@@ -64,11 +92,6 @@ body {
     border-color: #17a2b8;
 }
 
-.chart-card {
-    height: 300px;
-    width: 100%;
-}
-
 .table-actions {
     display: flex;
     gap: 10px;
@@ -77,4 +100,15 @@ body {
 .urban-unite-font {
     font-family: 'Cinzel', serif;
     font-weight: bold;
-  }
+}
+
+.image-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-card img:hover {
+    transform: scale(1.05);
+}
