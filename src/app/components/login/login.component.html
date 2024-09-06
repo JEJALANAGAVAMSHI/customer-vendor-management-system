@@ -5,7 +5,11 @@
   <div class="row justify-content-center w-100">
     <div class="col-md-4">
       <h3 class="text-center ">Log in to <span class="text-danger urban-unite-font">URBAN UNITE</span></h3>
+      
       <p class="text-center">By continuing, you agree to Urban Unite's <a href="#" class="text-decoration-none">Terms of Service</a> and acknowledge Urban Unite's <a href="#" class="text-decoration-none">Privacy Policy</a>.</p>
+      <div *ngIf="errorMessage" class="text-center error-message">
+        {{ errorMessage }}!!!
+      </div>
       <form [formGroup]="registerForm" (ngSubmit)="onLogin()">
         <div class="mb-3">
           <input type="text" name="username" class="form-control" placeholder="Username" 
@@ -30,6 +34,7 @@
           <span *ngIf="validateControlError('password','required')" class="text-danger">Password is mandatory    
           </span>
         </div>
+        
         <button type="submit" class="btn btn-danger w-100" [disabled]="registerForm.invalid">Log In</button>
       </form>
       <p class="text-center mt-3">New User? <a routerLink="/customerregister" class="text-primary text-decoration-none">Sign up</a></p>

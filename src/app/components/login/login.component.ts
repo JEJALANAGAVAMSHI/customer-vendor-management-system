@@ -17,6 +17,7 @@ export class LoginComponent {
     email: '',
     password: ''
   }
+  errorMessage: string = '';
   submitted=false;
   registerForm: FormGroup = null!;
 
@@ -52,11 +53,11 @@ export class LoginComponent {
           console.log('Login successful');
           console.log('Token:', response.value.token);
           console.log('Role:', response.value.roles);
-          
+          this.errorMessage = '';
           
         },
         error => {
-          console.error('Login failed', error);
+          this.errorMessage = error
         }
       );
       
