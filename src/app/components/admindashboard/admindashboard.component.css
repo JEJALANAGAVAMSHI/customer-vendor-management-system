@@ -20,6 +20,7 @@ body {
     color: #e9ecef;
     text-align: center;
     margin-bottom: 30px;
+    font-family: 'Cinzel', serif;
 }
 
 .sidebar a {
@@ -28,10 +29,6 @@ body {
     text-decoration: none;
     display: block;
     transition: background-color 0.3s;
-}
-
-.sidebar h5 {
-    font-family: 'Cinzel', serif;
 }
 
 .sidebar a:hover {
