@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiResponse } from '../../models/apiResponse';
 import { RegisterVendor } from '../../models/registerVendor';
 import { RegisterVendorService } from '../../services/register-vendor.service';
@@ -23,7 +24,9 @@ export class BusinessRegisterComponent{
 
     submitted=false;
   registerForm: FormGroup = null!;
-  constructor(private fb:FormBuilder, private registerVendorService: RegisterVendorService){}
+  constructor(private fb:FormBuilder, 
+    private registerVendorService: RegisterVendorService,
+    private router:Router){}
 ngOnInit(){
   this.registerForm = this.fb.group({
     email: ['',[Validators.required,Validators.email]],
@@ -72,6 +75,7 @@ ngOnInit(){
             
             (response : ApiResponse)=> {
               console.log('Registration successful');
+              this.router.navigate(['/login']);
             },
             error => {
               console.error('Registration failed', error);

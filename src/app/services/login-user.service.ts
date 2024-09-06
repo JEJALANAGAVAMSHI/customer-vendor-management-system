@@ -15,12 +15,10 @@ export class LoginUserService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  // Method to handle user login
   loginUser(body: LoginUser): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, body)
       .pipe(
         tap(response => {
-          console.log(response.statusCode)
           if (response && response.statusCode==200 && response.value && response.value.token) {
             localStorage.setItem('token', response.value.token); 
             this.role = response.value.roles[0]
