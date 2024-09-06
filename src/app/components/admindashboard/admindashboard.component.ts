@@ -12,6 +12,6 @@ export class AdmindashboardComponent {
 
   logout() {
     this.authService.logout();  // Call the logout method from your authentication service
-    this.router.navigate(['/home']);  // Redirect to the login page or home page
+    this.router.navigate(['']);  // Redirect to the login page or home page
   }
 }
