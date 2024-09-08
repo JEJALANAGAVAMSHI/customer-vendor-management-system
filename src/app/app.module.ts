@@ -15,6 +15,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
+import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CustomerdashboardComponent } from './components/customerdashboard/custo
     CustomerregisterComponent,
     AdmindashboardComponent,
     VendordashboardComponent,
-    CustomerdashboardComponent
+    CustomerdashboardComponent,
+    ViewVendorsComponent
   ],
   imports: [
     BrowserModule,

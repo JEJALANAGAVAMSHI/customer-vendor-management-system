@@ -14,4 +14,7 @@ export class AdmindashboardComponent {
     this.authService.logout();  // Call the logout method from your authentication service
     this.router.navigate(['']);  // Redirect to the login page or home page
   }
+  viewAllVendors() {
+    this.router.navigate(['/admindashboard/vendors']);
+  }
 }
