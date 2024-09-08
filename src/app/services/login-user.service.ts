@@ -34,6 +34,11 @@ export class LoginUserService {
         catchError(this.handleError)
       );
   }
+  logout() {
+    // Clear user session data, tokens, etc.
+    localStorage.removeItem('userToken');  // Example: remove token from localStorage
+    // You can also clear other session data or cookies if necessary
+  }
 
 
   getUserRoleFromToken(token:string): string | null {
