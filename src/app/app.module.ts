@@ -16,6 +16,7 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
+import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ViewVendorsComponent } from './components/view-vendors/view-vendors.com
     AdmindashboardComponent,
     VendordashboardComponent,
     CustomerdashboardComponent,
-    ViewVendorsComponent
+    ViewVendorsComponent,
+    ViewCustomersComponent
   ],
   imports: [
     BrowserModule,
