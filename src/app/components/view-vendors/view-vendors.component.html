@@ -21,7 +21,7 @@
           <td>{{ vendor.phoneNumber }}</td>
           <td>{{ vendor.postalCode }}</td>
           <td>
-            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-danger" (click)="deleteVendor(vendor.id)">Delete</button>
           </td>
         </tr>
       </tbody>

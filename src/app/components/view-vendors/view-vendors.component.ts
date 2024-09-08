@@ -38,6 +38,19 @@ export class ViewVendorsComponent implements OnInit {
         this.loading = false;
       }
     });
+    
+  }
+  deleteVendor(vendorId: string): void {
+    this.vendorsService.deleteVendorById(vendorId).subscribe({
+      next: () => {
+        // Remove the deleted vendor from the list
+        this.vendors = this.vendors.filter(vendor => vendor.id !== vendorId.toString());
+      },
+      error: (error:any) => {
+        console.error('Error deleting vendor:', error);
+        this.error = 'Failed to delete vendor. Please try again later.';
+      }
+    });
   }
 
 }
