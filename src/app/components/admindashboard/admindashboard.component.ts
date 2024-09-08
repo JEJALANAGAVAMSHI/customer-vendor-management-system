@@ -17,4 +17,7 @@ export class AdmindashboardComponent {
   viewAllVendors() {
     this.router.navigate(['/admindashboard/vendors']);
   }
+  ViewAllCustomers(){
+    this.router.navigate(['/admindashboard/customers'])
+  }
 }

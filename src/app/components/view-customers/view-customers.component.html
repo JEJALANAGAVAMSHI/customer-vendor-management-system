@@ -1,1 +1,30 @@
-<p>view-customers works!</p>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="!loading && customers.length">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+      <th>State</th>
+      <th>Postal Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.userName }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phoneNumber }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.state }}</td>
+      <td>{{ customer.postalCode }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

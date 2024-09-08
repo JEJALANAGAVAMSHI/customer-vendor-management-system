@@ -9,6 +9,7 @@ import { CustomerregisterComponent } from './components/customerregister/custome
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
+import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'vendordashboard', component: VendordashboardComponent ,canActivate: [AuthGuard], data: { role: 'Vendor' }},
   { path: 'customerdashboard', component: CustomerdashboardComponent, canActivate: [AuthGuard], data: { role: 'Customer' } },
   { path: 'customerregister', component: CustomerregisterComponent },
-  { path : 'admindashboard/vendors' ,component: ViewVendorsComponent }
+  { path : 'admindashboard/vendors' ,component: ViewVendorsComponent },
+  { path : 'admindashboard/customers' ,component: ViewCustomersComponent }
 ];
 
 @NgModule({
