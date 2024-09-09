@@ -18,4 +18,8 @@ export class VendorGetBusinessesService {
     });
     return this.http.get<BusinessByIdDto[]>(this.apiUrl, { headers });
   }
+  deleteBusiness(businessId: number): Observable<void> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    return this.http.delete<void>(`${this.apiUrl}/${businessId}`, { headers });
+  }
 }

@@ -8,12 +8,13 @@ import { BusinessByIdDto } from '../models/businessByIdDto';
 })
 export class VendorBusinessByIdService {
 
-  private apiUrl = 'http://localhost:8080/vendor/get-businesses'; // Replace with your API URL
+  private apiUrl = 'http://localhost:8080/vendor'; // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 
   getBusinessById(businessId: number): Observable<BusinessByIdDto> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-    return this.http.get<BusinessByIdDto>(`${this.apiUrl}/${businessId}`, { headers });
+    return this.http.get<BusinessByIdDto>(`${this.apiUrl}/get-businesses/${businessId}`, { headers });
   }
+  
 }
