@@ -8,7 +8,7 @@ import { BusinessByIdDto } from '../models/businessByIdDto';
 })
 export class VendorBusinessByIdService {
 
-  private apiUrl = 'https://your-api-url/api/businesses'; // Replace with your API URL
+  private apiUrl = 'http://localhost:8080/vendor/get-businesses'; // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 
