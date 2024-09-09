@@ -20,6 +20,7 @@ import { ViewCustomersComponent } from './components/view-customers/view-custome
 import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
+import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.co
     ViewCustomersComponent,
     TermsofuseComponent,
     PrivacypolicyComponent,
-    CookiepolicyComponent
+    CookiepolicyComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,
