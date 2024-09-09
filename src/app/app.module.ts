@@ -18,6 +18,7 @@ import { CustomerdashboardComponent } from './components/customerdashboard/custo
 import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { TermsofuseComponent } from './components/termsofuse/termsofuse.componen
     CustomerdashboardComponent,
     ViewVendorsComponent,
     ViewCustomersComponent,
-    TermsofuseComponent
+    TermsofuseComponent,
+    PrivacypolicyComponent
   ],
   imports: [
     BrowserModule,

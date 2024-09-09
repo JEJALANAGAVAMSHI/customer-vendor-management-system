@@ -8,6 +8,7 @@ import { CustomerdashboardComponent } from './components/customerdashboard/custo
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'customerregister', component: CustomerregisterComponent },
   { path : 'admindashboard/vendors' ,component: ViewVendorsComponent },
   { path : 'termsofuse' ,component: TermsofuseComponent },
+  { path : 'privacypolicy' ,component: PrivacypolicyComponent },
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent }
 ];
 
