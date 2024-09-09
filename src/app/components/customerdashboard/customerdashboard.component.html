@@ -84,47 +84,29 @@
                 <div class="cards-container">
                     <div class="card-item">
                         <a href="#">
-                            <img src="https://www.bing.com/th/id/OIP.Uf7LMXTLeZlYdH0MqW4M-AAAAA?rs=1&pid=ImgDetMain" alt="Shop 3">
+                            <img src="https://www.designdekko.com/uploads/project/1605685909_11.jpg" alt="Shop 3">
                         </a>
                     </div>
                     <div class="card-item">
                         <a href="#">
-                            <img src="https://th.bing.com/th/id/OIP.YZHsCoN4I6_PB6fh0t5sOQHaE8?rs=1&pid=ImgDetMain" alt="Shop 4">
+                            <img src="https://www.designdekko.com/uploads/project/1605685909_11.jpg" alt="Shop 4">
                         </a>
                     </div>
                 </div>
                 <button class="more-button">More</button>
             </div>
-
-            <!-- Services Section -->
-            <div class="section">
-                <h2>Services near me</h2>
-                <div class="cards-container">
-                    <div class="card-item">
-                        <a href="#">
-                            <img src="https://www.designdekko.com/uploads/project/1605685909_11.jpg" alt="Service 1">
-                        </a>
-                    </div>
-                    <div class="card-item">
-                        <a href="#">
-                            <img src="https://www.designdekko.com/uploads/project/1605685909_11.jpg" alt="Service 2">
-                        </a>
-                    </div>
-                </div>
-                <div class="cards-container">
-                    <div class="card-item">
-                        <a href="#">
-                            <img src="https://www.designdekko.com/uploads/project/1605685909_11.jpg" alt="Service 3">
-                        </a>
-                    </div>
-                    <div class="card-item">
-                        <a href="#">
-                            <img src="https://www.designdekko.com/uploads/project/1605685909_11.jpg" alt="Service 4">
-                        </a>
-                    </div>
-                </div>
-                <button class="more-button">More</button>
-            </div>
+            <div *ngFor="let business of businesses">
+                <h3>{{ business.businessName }}</h3>
+                
+                <p>Category: {{ business.category }}</p>
+                <p>Address: {{ business.address }}</p>
+                <p>State: {{ business.state }}</p>
+                <p>Postal Code: {{ business.postalCode }}</p>
+                <p>Email: {{ business.email }}</p>
+                <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
+                <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
+              </div>
+            
         </div>
     </div>
 
