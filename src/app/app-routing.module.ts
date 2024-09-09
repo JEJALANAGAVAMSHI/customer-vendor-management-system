@@ -9,6 +9,7 @@ import { BusinessRegisterComponent } from './components/businessregister/busines
 import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
+import { GetBusinessByIdComponent } from './components/get-business-by-id/get-business-by-id.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path : 'cookiepolicy' ,component: CookiepolicyComponent },
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent },
   { path : 'admindashboard/add-customer', component : AddCustomerComponent},
-  { path : 'admindashboard/add-vendor', component : AddVendorComponent}
+  { path : 'admindashboard/add-vendor', component : AddVendorComponent},
+  { path : 'customerdashboard/business/:id', component : GetBusinessByIdComponent}
 ];
 
 @NgModule({
