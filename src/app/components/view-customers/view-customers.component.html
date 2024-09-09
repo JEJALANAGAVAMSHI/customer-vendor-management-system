@@ -1,30 +1,78 @@
-<div *ngIf="loading">Loading...</div>
-<div *ngIf="error">{{ error }}</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<table *ngIf="!loading && customers.length">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-      <th>State</th>
-      <th>Postal Code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let customer of customers">
-      <td>{{ customer.id }}</td>
-      <td>{{ customer.userName }}</td>
-      <td>{{ customer.email }}</td>
-      <td>{{ customer.phoneNumber }}</td>
-      <td>{{ customer.address }}</td>
-      <td>{{ customer.state }}</td>
-      <td>{{ customer.postalCode }}</td>
-      <td>
-        <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Customers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h5 class="sidebar-heading">URBAN UNITE</h5>
+        <ul class="sidebar-menu">
+            <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-plus"></i> Add Vendor</a></li>
+            <li><a href="#"><i class="fas fa-list"></i> View All Vendors</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Admin Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Analytics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h2 class="my-4">All Customers</h2>
+            <div *ngIf="loading">Loading...</div>
+            <div *ngIf="error">{{ error }}</div>
+
+            <div *ngIf="!loading && customers.length">
+                <div class="customer-cards">
+                    <div class="customer-card" *ngFor="let customer of customers">
+                        <h3>{{ customer.userName }}</h3>
+                        <p><strong>Email:</strong> {{ customer.email }}</p>
+                        <p><strong>Phone Number:</strong> {{ customer.phoneNumber }}</p>
+                        <p><strong>Address:</strong> {{ customer.address }}</p>
+                        <p><strong>State:</strong> {{ customer.state }}</p>
+                        <p><strong>Postal Code:</strong> {{ customer.postalCode }}</p>
+                        <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
