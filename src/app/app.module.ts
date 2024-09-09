@@ -17,6 +17,7 @@ import { VendordashboardComponent } from './components/vendordashboard/vendordas
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
+import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ViewCustomersComponent } from './components/view-customers/view-custome
     VendordashboardComponent,
     CustomerdashboardComponent,
     ViewVendorsComponent,
-    ViewCustomersComponent
+    ViewCustomersComponent,
+    TermsofuseComponent
   ],
   imports: [
     BrowserModule,

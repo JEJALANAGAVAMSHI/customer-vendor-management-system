@@ -8,6 +8,7 @@ import { CustomerdashboardComponent } from './components/customerdashboard/custo
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'customerdashboard', component: CustomerdashboardComponent, canActivate: [AuthGuard], data: { role: 'Customer' } },
   { path: 'customerregister', component: CustomerregisterComponent },
   { path : 'admindashboard/vendors' ,component: ViewVendorsComponent },
+  { path : 'termsofuse' ,component: TermsofuseComponent },
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent }
 ];
 
