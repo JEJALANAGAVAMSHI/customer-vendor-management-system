@@ -53,6 +53,17 @@
                     <p>Details about events and offers...</p>
                 </a>
             </div>
+            <div *ngFor="let business of businesses">
+                <h3>{{ business.businessName }}</h3>
+                
+                <p>Category: {{ business.category }}</p>
+                <p>Address: {{ business.address }}</p>
+                <p>State: {{ business.state }}</p>
+                <p>Postal Code: {{ business.postalCode }}</p>
+                <p>Email: {{ business.email }}</p>
+                <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
+                <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
+              </div>
 
             <!-- Shops Section -->
             <div class="section">
