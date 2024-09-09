@@ -1,0 +1,90 @@
+<!-- Business Registration Content -->
+<app-navbar></app-navbar>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+<div class="container content-wrapper">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <h3 class="text-center" style="padding-top: 30px;">Step Into <span class="urban-unite-font text-danger">URBAN UNITE</span> : Join Us Today!!</h3>
+        <p class="text-center">
+            Sign up to discover, connect, and engage with local businesses and services.
+        </p>
+        <form [formGroup]="registerForm">
+          <div class="mb-3">
+            <input type="text" class="form-control" formControlName="username"
+            [class.is-invalid]="validateControl('username')" placeholder="Username" 
+            [(ngModel)]="customer.userName" 
+            name="username" required>
+            <span *ngIf="validateControlError('username','required')" class="text-danger">Username is mandatory    
+            </span>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" formControlName="address"
+            [class.is-invalid]="validateControl('address')" placeholder="Address" 
+            [(ngModel)]="customer.address" 
+            name="address" required>
+            <span *ngIf="validateControlError('address','required')" class="text-danger">Address is mandatory    
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" formControlName="state"
+              [class.is-invalid]="validateControl('state')" placeholder="State" 
+              [(ngModel)]="customer.state" 
+              name="state" required>
+              <span *ngIf="validateControlError('state','required')" class="text-danger">State is mandatory    
+              </span>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" formControlName="postalCode"
+              [class.is-invalid]="validateControl('postalCode')" placeholder="Postcode" 
+              [(ngModel)]="customer.postalCode" 
+              name="postalCode" required>
+              <span *ngIf="validateControlError('postalCode','required')" class="text-danger">Post Code is mandatory    
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" formControlName="phonenumber"
+            [class.is-invalid]="validateControl('phonenumber')" placeholder="Phone number" 
+            [(ngModel)]="customer.phoneNumber"
+            name="phonenumber" required>
+            <span *ngIf="validateControlError('phonenumber','required')" class="text-danger">Phone number is mandatory    
+            </span>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" formControlName="email"
+            [class.is-invalid]="validateControl('email')" placeholder="Enter email address" 
+            [(ngModel)]="customer.email"
+            name="email" required>
+            <span *ngIf="validateControlError('email','required')" class="text-danger">Email is mandatory    
+            </span>
+            <span *ngIf="validateControlError('email','email')" class="text-danger">Email is invalid    
+            </span>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" formControlName="password"
+            [class.is-invalid]="validateControl('password')" placeholder="Password" 
+            [(ngModel)]="customer.passwordHash"
+            name="passwordHash" required>
+            <span *ngIf="validateControlError('password','required')" class="text-danger">Password is mandatory    
+            </span>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" formControlName="confirmpassword"
+            [class.is-invalid]="validateControl('confirmpassword')" placeholder="Confirm Password" 
+            name="confirmpassword" required>
+            <span *ngIf="validateControlError('confirmpassword','passwordMismatch')" class="text-danger">
+              Password and Confirm Password are not same   </span>
+          </div>
+          <button type="submit" (click)="onSubmit()" [disabled]="registerForm.invalid" class="btn btn-danger w-100">Register</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a routerLink="/login" class="text-primary text-decoration-none">Log in</a></p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="https://primesmile.com/wp-content/uploads/2021/02/paperwork.png" alt="Image" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  
