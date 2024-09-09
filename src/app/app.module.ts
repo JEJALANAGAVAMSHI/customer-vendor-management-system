@@ -24,6 +24,7 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
 import { AddVendorComponent } from './components/add-vendor/add-vendor.component';
 import { GetBusinessByIdComponent } from './components/get-business-by-id/get-business-by-id.component';
 import { BusinessListComponent } from './components/business-list/business-list.component';
+import { VendorBusinessByIdComponent } from './components/vendor-business-by-id/vendor-business-by-id.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { BusinessListComponent } from './components/business-list/business-list.
     AddCustomerComponent,
     AddVendorComponent,
     GetBusinessByIdComponent,
-    BusinessListComponent
+    BusinessListComponent,
+    VendorBusinessByIdComponent
   ],
   imports: [
     BrowserModule,
