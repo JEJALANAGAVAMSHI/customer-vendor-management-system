@@ -4,10 +4,13 @@ import { AuthGuard } from './auth.guard';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
+import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
+import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 import { ViewVendorsComponent } from './components/view-vendors/view-vendors.component';
@@ -22,6 +25,9 @@ const routes: Routes = [
   { path: 'customerdashboard', component: CustomerdashboardComponent, canActivate: [AuthGuard], data: { role: 'Customer' } },
   { path: 'customerregister', component: CustomerregisterComponent },
   { path : 'admindashboard/vendors' ,component: ViewVendorsComponent },
+  { path : 'termsofuse' ,component: TermsofuseComponent },
+  { path : 'privacypolicy' ,component: PrivacypolicyComponent },
+  { path : 'cookiepolicy' ,component: CookiepolicyComponent },
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent }
 ];
 
