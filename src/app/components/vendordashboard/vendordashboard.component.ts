@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BusinessByIdDto } from '../../models/businessByIdDto';
 import { VendorGetBusinessesService } from '../../services/vendor-get-businesses.service';
 
@@ -12,7 +13,7 @@ export class VendordashboardComponent {
   loading: boolean = true;
   error: string | null = null;
 
-  constructor(private businessService: VendorGetBusinessesService) {}
+  constructor(private businessService: VendorGetBusinessesService, private router:Router) {}
 
   ngOnInit(): void {
     this.loadBusinesses();
@@ -30,5 +31,21 @@ export class VendordashboardComponent {
         console.error(err);
       }
     });
+  }
+  viewBusiness(businessId: number): void {
+    this.router.navigate(['/vendordashboard/business-details', businessId]);
+  }
+  deleteBusiness(businessId: number): void {
+    if (confirm('Are you sure you want to delete this business?')) {
+      this.businessService.deleteBusiness(businessId).subscribe({
+        next: () => {
+          alert('Business deleted successfully');
+          this.loadBusinesses(); // Reload the businesses list
+        },
+        error: (error:any) => {
+          console.error('Error deleting business:', error);
+        }
+      });
+    }
   }
 }

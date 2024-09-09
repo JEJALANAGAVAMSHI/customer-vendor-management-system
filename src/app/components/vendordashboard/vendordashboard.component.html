@@ -19,7 +19,7 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#orders">Orders</a></li>
                     <li><a href="#profile">Profile</a></li>
-                    <li><a href="#settings">Settings</a></li>
+                    <li><a routerLink="/addbusiness">Add Business</a></li>
                     <li><a href="#logout">Log Out</a></li>
                 </ul>
             </nav>
@@ -93,6 +93,8 @@
                   <p>Email: {{ business.email }}</p>
                   <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
                   <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
+                  <button (click)="viewBusiness(business.businessId)" class="btn btn-primary">View</button>
+                  <button (click)="deleteBusiness(business.businessId)" class="btn btn-danger">Delete</button>
                 </div>
               </div>
               

@@ -1,0 +1,33 @@
+<<div *ngIf="business">
+    <h2>{{ business.businessName }}</h2>
+    <p>Category: {{ business.category }}</p>
+    <p>Address: {{ business.address }}</p>
+    <p>State: {{ business.state }}</p>
+    <p>Postal Code: {{ business.postalCode }}</p>
+    <p>Email: {{ business.email }}</p>
+    <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
+    <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
+  
+    <h3>Products</h3>
+    <ul *ngIf="business.products && business.products.length > 0; else noProducts">
+      <li *ngFor="let product of business.products">{{ product.productName }}
+        <button (click)="deleteProduct(product.productId)" class="btn btn-danger btn-sm">Delete</button>
+      </li>
+    </ul>
+    <ng-template #noProducts>
+        <p>No products available for this business.</p>
+      </ng-template>
+    <p *ngIf="business.products?.length === 0">No products available.</p>
+  
+    <h3>Services</h3>
+    <ul *ngIf="business.services && business.services.length > 0; else noServices">
+      <li *ngFor="let service of business.services">{{ service.serviceName }}
+        <button (click)="deleteService(service.serviceId)" class="btn btn-danger btn-sm">Delete</button>
+      </li>
+    </ul>
+    <ng-template #noServices>
+        <p>No Services available for this business.</p>
+    </ng-template>
+    <p *ngIf="business.services?.length === 0">No services available.</p>
+  </div>
+  
