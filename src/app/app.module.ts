@@ -21,6 +21,7 @@ import { TermsofuseComponent } from './components/termsofuse/termsofuse.componen
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
+import { AddVendorComponent } from './components/add-vendor/add-vendor.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
     TermsofuseComponent,
     PrivacypolicyComponent,
     CookiepolicyComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddVendorComponent
   ],
   imports: [
     BrowserModule,

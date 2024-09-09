@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
+import { AddVendorComponent } from './components/add-vendor/add-vendor.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path : 'privacypolicy' ,component: PrivacypolicyComponent },
   { path : 'cookiepolicy' ,component: CookiepolicyComponent },
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent },
-  { path : 'admindashboard/add-customer', component : AddCustomerComponent}
+  { path : 'admindashboard/add-customer', component : AddCustomerComponent},
+  { path : 'admindashboard/add-vendor', component : AddVendorComponent}
 ];
 
 @NgModule({
