@@ -70,22 +70,32 @@
                 </div>
             </div>
 
-            <!-- Products Section -->
-            <div class="products-section">
-                <h2>Products</h2>
-                <div class="product-cards">
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product Image">
-                        <h3>Product Name</h3>
-                        <p>Short description of the product.</p>
-                        <div class="product-card-actions">
-                            <button class="btn">View</button>
-                            <button class="btn">Edit</button>
-                        </div>
-                    </div>
-                    <!-- Repeat Product Cards as needed -->
+            <div *ngIf="loading" class="loading">
+                <p>Loading businesses...</p>
+              </div>
+              
+              <div *ngIf="error" class="error">
+                <p>{{ error }}</p>
+              </div>
+              
+              <div *ngIf="!loading && businesses.length === 0" class="no-businesses">
+                <p>No businesses yet</p>
+              </div>
+              
+              <div *ngIf="!loading && businesses.length > 0" class="business-list">
+                <h2>Businesses</h2>
+                <div *ngFor="let business of businesses" class="business-item">
+                  <h3>{{ business.businessName }}</h3>
+                  <p>Category: {{ business.category }}</p>
+                  <p>Address: {{ business.address }}</p>
+                  <p>State: {{ business.state }}</p>
+                  <p>Postal Code: {{ business.postalCode }}</p>
+                  <p>Email: {{ business.email }}</p>
+                  <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
+                  <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
                 </div>
-            </div>
+              </div>
+              
         </div>
     </div>
 </body>
