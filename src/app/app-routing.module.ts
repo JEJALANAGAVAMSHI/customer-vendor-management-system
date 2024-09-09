@@ -4,6 +4,7 @@ import { AuthGuard } from './auth.guard';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
+import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path : 'admindashboard/vendors' ,component: ViewVendorsComponent },
   { path : 'termsofuse' ,component: TermsofuseComponent },
   { path : 'privacypolicy' ,component: PrivacypolicyComponent },
+  { path : 'cookiepolicy' ,component: CookiepolicyComponent },
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent }
 ];
 

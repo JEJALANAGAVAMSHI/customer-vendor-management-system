@@ -19,6 +19,7 @@ import { ViewVendorsComponent } from './components/view-vendors/view-vendors.com
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
 import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
+import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy
     ViewVendorsComponent,
     ViewCustomersComponent,
     TermsofuseComponent,
-    PrivacypolicyComponent
+    PrivacypolicyComponent,
+    CookiepolicyComponent
   ],
   imports: [
     BrowserModule,
