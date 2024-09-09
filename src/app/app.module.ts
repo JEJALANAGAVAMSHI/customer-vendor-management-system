@@ -23,6 +23,7 @@ import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.co
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { AddVendorComponent } from './components/add-vendor/add-vendor.component';
 import { GetBusinessByIdComponent } from './components/get-business-by-id/get-business-by-id.component';
+import { BusinessListComponent } from './components/business-list/business-list.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { GetBusinessByIdComponent } from './components/get-business-by-id/get-bu
     CookiepolicyComponent,
     AddCustomerComponent,
     AddVendorComponent,
-    GetBusinessByIdComponent
+    GetBusinessByIdComponent,
+    BusinessListComponent
   ],
   imports: [
     BrowserModule,

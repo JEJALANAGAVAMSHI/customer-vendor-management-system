@@ -5,6 +5,7 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
 import { AddVendorComponent } from './components/add-vendor/add-vendor.component';
 import { AddBusinessComponent } from './components/addbusiness/addbusiness.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { BusinessListComponent } from './components/business-list/business-list.component';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
 import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path : 'admindashboard/customers' ,component: ViewCustomersComponent },
   { path : 'admindashboard/add-customer', component : AddCustomerComponent},
   { path : 'admindashboard/add-vendor', component : AddVendorComponent},
+  { path: 'business-list', component: BusinessListComponent },
   { path : 'customerdashboard/business/:id', component : GetBusinessByIdComponent}
 ];
 

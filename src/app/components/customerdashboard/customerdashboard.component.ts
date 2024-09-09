@@ -30,7 +30,4 @@ export class CustomerdashboardComponent implements OnInit{
     this.authService.logout();  // Call the logout method from your authentication service
     this.router.navigate(['']);  // Redirect to the login page or home page
   }
-  viewBusinessDetails(businessId: number): void {
-    this.router.navigate(['/customerdashboard/business', businessId]);
-  }
 }
