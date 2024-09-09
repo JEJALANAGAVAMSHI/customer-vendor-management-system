@@ -1,27 +1,25 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { VendorDto } from '../models/vendorDto';
+import { CustomerDto } from '../models/customerDto';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ViewVendorsService {
+export class ViewCustomersService {
 
   private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
   
-  getAllVendors(): Observable<{ vendors: VendorDto[] }> {
+  getAllCustomers(): Observable<{ customers: CustomerDto[] }> {
     const token = localStorage.getItem('token'); // Assuming the token is stored with key 'authToken'
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<{ vendors: VendorDto[] }>(`${this.baseUrl}/vendors`, {headers});
+    return this.http.get<{ customers: CustomerDto[] }>(`${this.baseUrl}/customers`, {headers});
   }
-  deleteVendorById(id: string): Observable<void> {
+  deleteCustomerById(id: string): Observable<void> {
     const token = localStorage.getItem('token'); // Assuming the token is stored with key 'authToken'
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.delete<void>(`${this.baseUrl}/vendor/${id}`, {headers});
+    return this.http.delete<void>(`${this.baseUrl}/customer/${id}`, {headers});
   }
-
-  
 }
