@@ -10,7 +10,9 @@
   
     <h3>Products</h3>
     <ul *ngIf="business.products && business.products.length > 0; else noProducts">
-      <li *ngFor="let product of business.products">{{ product.productName }}</li>
+      <li *ngFor="let product of business.products">{{ product.productName }}
+        <button (click)="deleteProduct(product.productId)" class="btn btn-danger btn-sm">Delete</button>
+      </li>
     </ul>
     <ng-template #noProducts>
         <p>No products available for this business.</p>
@@ -19,7 +21,9 @@
   
     <h3>Services</h3>
     <ul *ngIf="business.services && business.services.length > 0; else noServices">
-      <li *ngFor="let service of business.services">{{ service.serviceName }}</li>
+      <li *ngFor="let service of business.services">{{ service.serviceName }}
+        <button (click)="deleteService(service.serviceId)" class="btn btn-danger btn-sm">Delete</button>
+      </li>
     </ul>
     <ng-template #noServices>
         <p>No Services available for this business.</p>

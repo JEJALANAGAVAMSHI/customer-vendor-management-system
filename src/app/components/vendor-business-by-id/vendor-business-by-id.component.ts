@@ -30,4 +30,31 @@ export class VendorBusinessByIdComponent implements OnInit {
       }
     });
   }
+  deleteProduct(productId: number): void {
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.businessService.deleteProduct(productId).subscribe({
+        next: () => {
+          alert('Product deleted successfully');
+          this.loadBusinessDetails(this.business?.businessId!); // Reload the business details
+        },
+        error: (error : any) => {
+          console.error('Error deleting product:', error);
+        }
+      });
+    }
+  }
+
+  deleteService(serviceId: number): void {
+    if (confirm('Are you sure you want to delete this service?')) {
+      this.businessService.deleteService(serviceId).subscribe({
+        next: () => {
+          alert('Service deleted successfully');
+          this.loadBusinessDetails(this.business?.businessId!); // Reload the business details
+        },
+        error: (error:any) => {
+          console.error('Error deleting service:', error);
+        }
+      });
+    }
+  }
 }

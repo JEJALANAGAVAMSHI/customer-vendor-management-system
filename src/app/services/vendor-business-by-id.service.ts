@@ -16,5 +16,13 @@ export class VendorBusinessByIdService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     return this.http.get<BusinessByIdDto>(`${this.apiUrl}/get-businesses/${businessId}`, { headers });
   }
-  
+  deleteProduct(productId: number): Observable<void> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    return this.http.delete<void>(`${this.apiUrl}/products/${productId}`, { headers });
+  }
+
+  deleteService(serviceId: number): Observable<void> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    return this.http.delete<void>(`${this.apiUrl}/services/${serviceId}`, { headers });
+  }
 }
