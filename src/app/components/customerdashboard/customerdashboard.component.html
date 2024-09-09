@@ -63,6 +63,7 @@
                 <p>Email: {{ business.email }}</p>
                 <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
                 <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
+                <button (click)="viewBusinessDetails(business.businessId)">View Details</button>
               </div>
 
             <!-- Shops Section -->
