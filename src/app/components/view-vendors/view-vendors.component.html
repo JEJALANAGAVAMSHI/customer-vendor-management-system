@@ -62,7 +62,7 @@
                     <p><strong>State:</strong> {{ vendor.state }}</p>
                     <p><strong>Phone Number:</strong> {{ vendor.phoneNumber }}</p>
                     <p><strong>Postal Code:</strong> {{ vendor.postalCode }}</p>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" (click)="deleteVendor(vendor.id)">Delete</button>
                 </div>
             </div>
         </div>
