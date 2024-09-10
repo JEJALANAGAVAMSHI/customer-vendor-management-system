@@ -1,38 +1,96 @@
-<button (click)="navigateToAddProduct()" class="btn btn-primary btn-sm">Add Product</button>
-<button (click)="navigateToAddService()" class="btn btn-primary btn-sm">Add Service</button>
-<div *ngIf="business">
-    <h2>{{ business.businessName }}</h2>
-    <p>Category: {{ business.category }}</p>
-    <p>Address: {{ business.address }}</p>
-    <p>State: {{ business.state }}</p>
-    <p>Postal Code: {{ business.postalCode }}</p>
-    <p>Email: {{ business.email }}</p>
-    <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
-    <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
-  
-    <h3>Products</h3>
-    <ul *ngIf="business.products && business.products.length > 0; else noProducts">
-      <li *ngFor="let product of business.products">
-        {{ product.productName }}
-        {{ product.description}}
-        {{ product.price}}
-        <button (click)="deleteProduct(product.productId)" class="btn btn-danger btn-sm">Delete</button>
-      </li>
-    </ul>
-    <ng-template #noProducts>
-        <p>No products available for this business.</p>
-      </ng-template>
-    <p *ngIf="business.products?.length === 0">No products available.</p>
-  
-    <h3>Services</h3>
-    <ul *ngIf="business.services && business.services.length > 0; else noServices">
-      <li *ngFor="let service of business.services">{{ service.serviceName }}
-        <button (click)="deleteService(service.serviceId)" class="btn btn-danger btn-sm">Delete</button>
-      </li>
-    </ul>
-    <ng-template #noServices>
-        <p>No Services available for this business.</p>
-    </ng-template>
-    <p *ngIf="business.services?.length === 0">No services available.</p>
-  </div>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul>
+                <h5>URBAN UNITE</h5>
+                <li><a routerLink="/vendordashboard">Dashboard</a></li>
+                <li><a (click)="navigateToAddProduct()">Add Products</a></li>
+                <li><a (click)="navigateToAddService()">Add Services</a></li>
+                <li><a routerLink="/addbusiness">Add Business</a></li>
+                <li><a href="#logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="navbar">
+        <div class="navbar-left">
+            <h1>Vendor Dashboard</h1>
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <a href="notifications">Notifications</a>
+                <a href="messages">Messages</a>
+                <a href="account">Account</a>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container mt-4">
+            <div *ngIf="business" class="card">
+                <div class="card-header">
+                    <h2 class="card-title">{{ business.businessName }}</h2>
+                </div>
+                <div class="card-body">
+                    <p class="para"><strong>Category:</strong> {{ business.category }}</p>
+                    <p class="para"><strong>Address:</strong> {{ business.address }}</p>
+                    <p class="para"><strong>State:</strong> {{ business.state }}</p>
+                    <p class="para"><strong>Postal Code:</strong> {{ business.postalCode }}</p>
+                    <p class="para"><strong>Email:</strong> {{ business.email }}</p>
+                    <p class="para"><strong>Open Days:</strong> {{ business.dayFrom }} to {{ business.dayTo }}</p>
+                    <p class="para"><strong>Open Time:</strong> {{ business.timeFrom }} to {{ business.timeTo }}</p>
+                    <br>
+                    
+                    <h3 style="margin: 10px;">Products</h3>
+                    <div *ngIf="business.products && business.products.length > 0; else noProducts">
+                        <div class="row">
+                            <div class="col-md-3" *ngFor="let product of business.products">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ product.productName }}</h5>
+                                        <p class="card-text" style="padding-bottom: 5px;">{{ product.description }}</p>
+                                        <p style="padding-bottom: 10px;"><strong>Price:</strong> {{ product.price }}</p>
+                                        <button (click)="deleteProduct(product.productId)" class="btn btn-danger btn-sm">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ng-template #noProducts>
+                        <p>No products available for this business.</p>
+                    </ng-template>
+                    
+                    <h3 style="margin: 10px;">Services</h3>
+                    <div *ngIf="business.services && business.services.length > 0; else noServices">
+                        <div class="row">
+                            <div class="col-md-3" *ngFor="let service of business.services">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ service.serviceName }}</h5>
+                                        <p class="card-text" style="padding-bottom: 5px;">{{ service.description }}</p>
+                                        <p style="padding-bottom: 10px;"><strong>Price:</strong> {{ service.price }}</p>
+                                        <button (click)="deleteService(service.serviceId)" class="btn btn-danger btn-sm">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ng-template #noServices>
+                        <p>No services available for this business.</p>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
+</body>
+</html>

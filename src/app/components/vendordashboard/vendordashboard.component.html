@@ -56,7 +56,7 @@
               
             <div *ngIf="!loading && businesses.length > 0" class="business-list">
                 <div *ngFor="let business of businesses" class="business-item">
-                  <h3>{{ business.businessName }}</h3>
+                  <h3 style="font-weight: bold; padding-bottom: 5px;">{{ business.businessName }}</h3>
                   <p>Category: {{ business.category }}</p>
                   <p>Address: {{ business.address }}</p>
                   <p>State: {{ business.state }}</p>
@@ -64,8 +64,10 @@
                   <p>Email: {{ business.email }}</p>
                   <p>Open Days: {{ business.dayFrom }} to {{ business.dayTo }}</p>
                   <p>Open Time: {{ business.timeFrom }} to {{ business.timeTo }}</p>
-                  <button (click)="viewBusiness(business.businessId)" class="btn btn-primary">View</button>
+                  <div style="padding-top: 10px;">
+                  <button (click)="viewBusiness(business.businessId)" class="btn btn-primary" style="margin-right: 10px;">View</button>
                   <button (click)="deleteBusiness(business.businessId)" class="btn btn-danger">Delete</button>
+                  </div>
                 </div>
             </div>
               
