@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BusinessByIdDto } from '../../models/businessByIdDto';
 import { VendorBusinessByIdService } from '../../services/vendor-business-by-id.service';
 
@@ -11,7 +11,9 @@ import { VendorBusinessByIdService } from '../../services/vendor-business-by-id.
 export class VendorBusinessByIdComponent implements OnInit {
   business: BusinessByIdDto | undefined;
 
-  constructor(private route: ActivatedRoute, private businessService: VendorBusinessByIdService) {}
+  constructor(private route: ActivatedRoute, 
+    private businessService: VendorBusinessByIdService,
+    private router : Router) {}
 
   ngOnInit(): void {
     const businessId = Number(this.route.snapshot.paramMap.get('id'));
@@ -55,6 +57,17 @@ export class VendorBusinessByIdComponent implements OnInit {
           console.error('Error deleting service:', error);
         }
       });
+    }
+  }
+  navigateToAddProduct(): void {
+    if (this.business) {
+      this.router.navigate(['/vendor/add-product', this.business.businessId]);
+    }
+  }
+
+  navigateToAddService(): void {
+    if (this.business) {
+      this.router.navigate(['/vendor/add-service', this.business.businessId]);
     }
   }
 }

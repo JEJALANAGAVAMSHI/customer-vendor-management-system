@@ -1,0 +1,17 @@
+<div>
+    <h2>Add Service</h2>
+    <div>
+      <label for="name">Service Name:</label>
+      <input type="text" id="name" [(ngModel)]="service.serviceName">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="service.description"></textarea>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" id="price" [(ngModel)]="service.price">
+    </div>
+    <button (click)="onSubmit()">Add Service</button>
+  </div>
+  

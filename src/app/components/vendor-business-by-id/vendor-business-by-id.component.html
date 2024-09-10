@@ -1,4 +1,6 @@
-<<div *ngIf="business">
+<button (click)="navigateToAddProduct()" class="btn btn-primary btn-sm">Add Product</button>
+<button (click)="navigateToAddService()" class="btn btn-primary btn-sm">Add Service</button>
+<div *ngIf="business">
     <h2>{{ business.businessName }}</h2>
     <p>Category: {{ business.category }}</p>
     <p>Address: {{ business.address }}</p>
@@ -10,7 +12,10 @@
   
     <h3>Products</h3>
     <ul *ngIf="business.products && business.products.length > 0; else noProducts">
-      <li *ngFor="let product of business.products">{{ product.productName }}
+      <li *ngFor="let product of business.products">
+        {{ product.productName }}
+        {{ product.description}}
+        {{ product.price}}
         <button (click)="deleteProduct(product.productId)" class="btn btn-danger btn-sm">Delete</button>
       </li>
     </ul>
