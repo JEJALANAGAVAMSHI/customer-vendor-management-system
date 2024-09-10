@@ -28,6 +28,8 @@ import { VendorBusinessByIdComponent } from './components/vendor-business-by-id/
 import { VendorAddProductComponent } from './components/vendor-add-product/vendor-add-product.component';
 import { VendorAddServiceComponent } from './components/vendor-add-service/vendor-add-service.component';
 import { CustomerOffersComponent } from './components/customer-offers/customer-offers.component';
+import { VendorOffersComponent } from './components/vendor-offers/vendor-offers.component';
+import { VendorAddOffersComponent } from './components/vendor-add-offers/vendor-add-offers.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { CustomerOffersComponent } from './components/customer-offers/customer-o
     VendorBusinessByIdComponent,
     VendorAddProductComponent,
     VendorAddServiceComponent,
-    CustomerOffersComponent
+    CustomerOffersComponent,
+    VendorOffersComponent,
+    VendorAddOffersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<!-- src/app/components/vendor-offers/vendor-offers.component.html -->
+<div class="container" *ngIf="!isLoading">
+    <h2>Offers for Business ID: {{ businessId }}</h2>
+  
+    <div *ngIf="offers.length > 0; else noOffers">
+      <ul>
+        <li *ngFor="let offer of offers">
+          <h3>{{ offer.offerName }}</h3>
+          <p>{{ offer.description }}</p>
+          <p><strong>From :</strong> {{ offer.dateFrom | date:'yyyy-MM-dd' }}</p>
+          <p><strong>To :</strong> {{ offer.dateTo | date:'yyyy-MM-dd' }}</p>
+          <button class="btn btn-primary" (click)="deleteOffer(offer.offerId)">Delete Offer</button>
+        </li>
+      </ul>
+    </div>
+  
+    <ng-template #noOffers>
+      <p>No offers available for this business.</p>
+    </ng-template>
+    <button class="btn btn-primary" (click)="addOffer()">Add New Offer</button>
+  </div>
+  

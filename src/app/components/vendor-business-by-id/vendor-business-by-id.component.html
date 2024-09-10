@@ -15,6 +15,7 @@
                 <li><a (click)="navigateToAddProduct()">Add Products</a></li>
                 <li><a (click)="navigateToAddService()">Add Services</a></li>
                 <li><a routerLink="/addbusiness">Add Business</a></li>
+                <li><a routerLink="/vendordashboard/offers/{{this.business?.businessId}}">Offers</a></li>
                 <li><a href="#logout">Log Out</a></li>
             </ul>
         </nav>
