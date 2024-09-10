@@ -1,19 +1,72 @@
-<!-- src/app/components/event-list/event-list.component.html -->
-<div *ngIf="isLoading">Loading events...</div>
-<div *ngIf="error">{{ error }}</div>
 
-<div *ngIf="!isLoading && offers.length > 0">
-  <h2>Upcoming Events/Offers</h2>
-  <ul>
-    <li *ngFor="let offer of offers">
-      <h3>{{ offer.offerName }} ({{ offer.businessName }})</h3>
-      <p>{{ offer.description }}</p>
-      <p><strong>From : </strong> {{ offer.dateFrom | date:'yyyy-MM-dd' }} 
-        <strong>To : </strong> {{ offer.dateTo | date:'yyyy-MM-dd'}} </p>
-    </li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Businesses</title>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">URBAN UNITE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<div *ngIf="!isLoading && offers.length === 0">
-  <p>No upcoming offers available.</p>
-</div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shops</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+          <!-- Your main content goes here -->
+          <div *ngIf="isLoading">Loading events...</div>
+          <div *ngIf="error">{{ error }}</div>
+        
+          <div *ngIf="!isLoading && offers.length > 0">
+              <h3 style="padding: 20px;" >Upcoming Events/Offers</h3>
+              <div class="card-container">
+                  <div class="card" *ngFor="let offer of offers">
+                      <h3>{{ offer.offerName }} ({{ offer.businessName }})</h3>
+                      <p>{{ offer.description }}</p>
+                      <p><strong>From: </strong> {{ offer.dateFrom | date:'yyyy-MM-dd' }} <strong>To:</strong>
+                          {{ offer.dateTo | date:'yyyy-MM-dd'}}</p>
+                  </div>
+              </div>
+          </div>
+        
+          <div *ngIf="!isLoading && offers.length === 0">
+              <p>No upcoming offers available.</p>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
