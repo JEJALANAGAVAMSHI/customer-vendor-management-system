@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px;
+    padding-top: 60px;
+}
+
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background-size: cover;
+}
+
+.sidebar-nav ul {
+    padding: 20px 0;
+    list-style: none;
+}
+
+.sidebar-nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    position: relative;
+    text-decoration: none;
+}
+
+.sidebar h5 {
+    color: rgb(230, 77, 77);
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Cinzel', serif;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #ff6f61;
+}
+
+.sidebar-nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    background: #ff6f61;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover::before,
+.sidebar-nav ul li a.active::before {
+    opacity: 1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #003366;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    z-index: 10;
+}
+
+.navbar-left h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar-right ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-right ul a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none; /* Remove underline */
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #ff6f61;
+}
