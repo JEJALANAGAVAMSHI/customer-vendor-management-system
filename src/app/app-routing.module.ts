@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
+import { VendorAddProductComponent } from './components/vendor-add-product/vendor-add-product.component';
+import { VendorAddServiceComponent } from './components/vendor-add-service/vendor-add-service.component';
 import { VendorBusinessByIdComponent } from './components/vendor-business-by-id/vendor-business-by-id.component';
 import { VendordashboardComponent } from './components/vendordashboard/vendordashboard.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
@@ -38,7 +40,9 @@ const routes: Routes = [
   { path : 'admindashboard/add-vendor', component : AddVendorComponent},
   { path: 'business-list', component: BusinessListComponent },
   { path : 'customerdashboard/business/:id', component : GetBusinessByIdComponent},
-  { path: 'vendordashboard/business-details/:id', component: VendorBusinessByIdComponent }
+  { path: 'vendordashboard/business-details/:id', component: VendorBusinessByIdComponent },
+  { path: 'vendor/add-product/:businessId', component: VendorAddProductComponent },
+  { path: 'vendor/add-service/:businessId', component: VendorAddServiceComponent },  
 ];
 
 @NgModule({
