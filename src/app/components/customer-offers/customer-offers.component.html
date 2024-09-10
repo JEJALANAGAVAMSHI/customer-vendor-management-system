@@ -1,0 +1,19 @@
+<!-- src/app/components/event-list/event-list.component.html -->
+<div *ngIf="isLoading">Loading events...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && offers.length > 0">
+  <h2>Upcoming Events/Offers</h2>
+  <ul>
+    <li *ngFor="let offer of offers">
+      <h3>{{ offer.offerName }} ({{ offer.businessName }})</h3>
+      <p>{{ offer.description }}</p>
+      <p><strong>From : </strong> {{ offer.dateFrom | date:'yyyy-MM-dd' }} 
+        <strong>To : </strong> {{ offer.dateTo | date:'yyyy-MM-dd'}} </p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!isLoading && offers.length === 0">
+  <p>No upcoming offers available.</p>
+</div>
