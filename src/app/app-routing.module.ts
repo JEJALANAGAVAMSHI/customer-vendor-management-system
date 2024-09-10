@@ -8,6 +8,7 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { BusinessListComponent } from './components/business-list/business-list.component';
 import { BusinessRegisterComponent } from './components/businessregister/businessregister.component';
 import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
+import { CustomerOffersComponent } from './components/customer-offers/customer-offers.component';
 import { CustomerdashboardComponent } from './components/customerdashboard/customerdashboard.component';
 import { CustomerregisterComponent } from './components/customerregister/customerregister.component';
 import { GetBusinessByIdComponent } from './components/get-business-by-id/get-business-by-id.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'vendordashboard/business-details/:id', component: VendorBusinessByIdComponent },
   { path: 'vendor/add-product/:businessId', component: VendorAddProductComponent },
   { path: 'vendor/add-service/:businessId', component: VendorAddServiceComponent },  
+  { path: 'customer/offers', component : CustomerOffersComponent}
 ];
 
 @NgModule({
