@@ -19,7 +19,6 @@ ul {
   list-style: none;
 }
 
-/* Vendor Dashboard Layout */
 .vendor-dashboard {
   display: flex;
   min-height: 100vh;
@@ -72,6 +71,13 @@ ul {
   position: relative;
 }
 
+.sidebar h5 {
+  color: rgb(230, 77, 77);
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Cinzel', serif;
+}
+
 .sidebar-nav ul li a:hover,
 .sidebar-nav ul li a.active {
   background: rgba(0, 0, 0, 0.2);
@@ -103,8 +109,7 @@ ul {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
-  border-radius: 10px;
+  background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-image: url('https://www.transparenttextures.com/patterns/diagonal-stripes.png');
   background-size: cover;
@@ -117,7 +122,6 @@ ul {
   padding: 15px 20px;
   background: #003366;
   color: white;
-  border-radius: 10px 10px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
@@ -141,7 +145,6 @@ ul {
   font-size: 18px;
 }
 
-/* Dashboard Overview */
 .dashboard-overview {
   margin: 80px 0 20px;
 }
@@ -196,7 +199,6 @@ ul {
   color: #ff6f61;
 }
 
-/* Products Section */
 .products-section {
   margin: 80px 0 20px;
 }
@@ -267,7 +269,6 @@ ul {
   background: #ff4c39;
 }
 
-/* Sidebar Toggle for Small Screens */
 .sidebar-toggle {
   display: none;
 }
@@ -288,4 +289,44 @@ ul {
 
 .sidebar-collapsed .sidebar-header {
   display: none;
+}
+
+.vendor-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+.business-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.business-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+.business-item h3 {
+  margin-top: 0;
+}
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px 0;
+}
+.btn-primary {
+  background-color: #007bff;
+}
+.btn-danger {
+  background-color: #dc3545;
 }
