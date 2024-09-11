@@ -11,23 +11,6 @@ body {
     min-height: 100vh;
 }
 
-.navbar {
-    width: 100%;
-    background-color: rgb(230, 77, 77);
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .navbar-brand {
-    font-family: 'Cinzel', serif;
-}
-
 .container {
     display: flex;
     margin-top: 60px; /* Adjust margin-top to fit below the navbar */
@@ -115,24 +98,4 @@ body {
 .more-button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.navbar-nav .nav-item {
-    margin: 0 10px;
-}
-
-.navbar-nav .nav-link {
-    color: #fff;
-    font-weight: 200;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #ddd;
 }

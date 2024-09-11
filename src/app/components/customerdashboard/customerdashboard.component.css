@@ -11,17 +11,6 @@ body {
     min-height: 100vh;
 }
 
-.navbar {
-    width: 100%;
-    background-color: rgb(230, 77, 77);
-    color: #fff;
-    text-align: center;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: background-color 0.3s ease;
-}
 
 .container {
     display: flex;
@@ -155,15 +144,6 @@ body {
 .more-button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
-}
-
-.navbar-brand {
-    font-family: 'Cinzel', serif;
-    padding-left: 20px;
-}
-
-.nav-link {
-    font-weight: 200;
 }
 
 @keyframes fadeIn {
