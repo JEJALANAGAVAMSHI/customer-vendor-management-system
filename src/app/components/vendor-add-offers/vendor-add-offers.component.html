@@ -1,29 +1,59 @@
-<!-- src/app/components/add-offer/add-offer.component.html -->
-<div class="container">
-    <h2>Add New Offer for Business ID: {{ offer.businessId }}</h2>
-  
-    <form (ngSubmit)="addOffer()">
-      <div class="form-group">
-        <label for="offerName">Offer Name</label>
-        <input type="text" id="offerName" [(ngModel)]="offer.offerName" name="offerName" class="form-control" required>
-      </div>
-  
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input type="text" id="description" [(ngModel)]="offer.description" name="description" class="form-control" required>
-      </div>
-  
-      <div class="form-group">
-        <label for="dateFrom">Date From</label>
-        <input type="date" id="dateFrom" [(ngModel)]="offer.dateFrom" name="dateFrom" class="form-control" required>
-      </div>
-  
-      <div class="form-group">
-        <label for="dateTo">Date To</label>
-        <input type="date" id="dateTo" [(ngModel)]="offer.dateTo" name="dateTo" class="form-control" required>
-      </div>
-  
-      <button type="submit" class="btn btn-success">Add Offer</button>
-    </form>
+
+<div class="vendor-dashboard">
+  <div class="sidebar">
+      <nav class="sidebar-nav">
+          <ul>
+              <h5>URBAN UNITE</h5>
+              <li><a routerLink="/vendordashboard">Dashboard</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#orders">Orders</a></li>
+              <li><a href="#home">Offers</a></li>
+              <li><a routerLink="/addbusiness">Add Business</a></li>
+              <li><a href="#logout">Log Out</a></li>
+          </ul>
+      </nav>
   </div>
-  
+
+  <div class="main-content">
+      <div class="navbar">
+          <div class="navbar-left">
+              <h1>Vendor Dashboard</h1>
+          </div>
+          <div class="navbar-right">
+              <ul>
+                  <li><a href="#notifications">Notifications</a></li>
+                  <li><a href="#messages">Messages</a></li>
+                  <li><a href="#account">Account</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="container">
+        
+          <form (ngSubmit)="addOffer()" class="form">
+            <h2>Add New Offer for Business ID: {{ offer.businessId }}</h2>
+              <div class="form-group">
+                  <label for="offerName">Offer Name</label>
+                  <input type="text" id="offerName" [(ngModel)]="offer.offerName" name="offerName" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                  <label for="description">Description</label>
+                  <input type="text" id="description" [(ngModel)]="offer.description" name="description" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                  <label for="dateFrom">Date From</label>
+                  <input type="date" id="dateFrom" [(ngModel)]="offer.dateFrom" name="dateFrom" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                  <label for="dateTo">Date To</label>
+                  <input type="date" id="dateTo" [(ngModel)]="offer.dateTo" name="dateTo" class="form-control" required>
+              </div>
+              
+              <button type="submit" class="btn btn-success">Add Offer</button>
+          </form>
+      </div>
+  </div>
+</div>
