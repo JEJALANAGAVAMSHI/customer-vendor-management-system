@@ -13,21 +13,22 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const token = localStorage.getItem('token');
-    if (!token) {
+
+    if (this.authService.isLoggedIn()) {
+      const userRole = this.authService.getUserRoleFromToken();
+      const requiredRole = route.data['role'] as string;
+      console.log(userRole)
+      if (userRole === requiredRole) {
+        
+        return true;
+      } else {
+        this.authService.redirectBasedOnRole(userRole);
+        
+        return false;
+      }
+    } else {
       this.router.navigate(['/login']);
       return false;
     }
-
-    const userRole = this.authService.getUserRoleFromToken(token); 
-
-    const requiredRole = route.data['role'] as string;
-
-    if (userRole !== requiredRole) {
-      this.router.navigate(['/login']); 
-      return false;
-    }
-
-    return true;
   }
 }
