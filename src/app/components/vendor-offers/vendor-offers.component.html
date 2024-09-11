@@ -1,22 +1,60 @@
-<!-- src/app/components/vendor-offers/vendor-offers.component.html -->
-<div class="container" *ngIf="!isLoading">
-    <h2>Offers for Business ID: {{ businessId }}</h2>
-  
-    <div *ngIf="offers.length > 0; else noOffers">
-      <ul>
-        <li *ngFor="let offer of offers">
-          <h3>{{ offer.offerName }}</h3>
-          <p>{{ offer.description }}</p>
-          <p><strong>From :</strong> {{ offer.dateFrom | date:'yyyy-MM-dd' }}</p>
-          <p><strong>To :</strong> {{ offer.dateTo | date:'yyyy-MM-dd' }}</p>
-          <button class="btn btn-primary" (click)="deleteOffer(offer.offerId)">Delete Offer</button>
-        </li>
-      </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+</head>
+<body>
+    <div class="vendor-dashboard">
+
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <h5>URBAN UNITE</h5>
+                    <li><a routerLink="/vendordashboard">Dashboard</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#orders">Orders</a></li>
+                    <li><a href="#home">Offers</a></li>
+                    <li><a routerLink="/addbusiness">Add Business</a></li>
+                    <li><a href="#logout">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="navbar">
+                <div class="navbar-left">
+                    <h1>Vendor Dashboard</h1>
+                </div>
+                <div class="navbar-right">
+                    <ul>
+                        <li><a href="#notifications">Notifications</a></li>
+                        <li><a href="#messages">Messages</a></li>
+                        <li><a href="#account">Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="container" *ngIf="!isLoading">
+                <h2>Offers for Business ID: {{ businessId }}</h2>
+
+                <div class="offers-container">
+                  <div class="offer-card" *ngFor="let offer of offers">
+                    <h3>{{ offer.offerName }}</h3>
+                    <p>{{ offer.description }}</p>
+                    <p><strong>From :</strong> {{ offer.dateFrom | date:'yyyy-MM-dd' }}</p>
+                    <p><strong>To :</strong> {{ offer.dateTo | date:'yyyy-MM-dd' }}</p>
+                    <button class="btn btn-danger" (click)="deleteOffer(offer.offerId)">Delete Offer</button>
+                  </div>
+                </div>
+
+                <ng-template #noOffers>
+                    <p>No offers available for this business.</p>
+                </ng-template>
+                <button class="btn btn-primary add-offer-btn" (click)="addOffer()">Add New Offer</button>
+            </div>
+        </div>
     </div>
-  
-    <ng-template #noOffers>
-      <p>No offers available for this business.</p>
-    </ng-template>
-    <button class="btn btn-primary" (click)="addOffer()">Add New Offer</button>
-  </div>
-  
+</body>
+</html>
