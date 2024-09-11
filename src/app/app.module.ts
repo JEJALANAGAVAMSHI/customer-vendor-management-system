@@ -30,6 +30,7 @@ import { VendorAddServiceComponent } from './components/vendor-add-service/vendo
 import { CustomerOffersComponent } from './components/customer-offers/customer-offers.component';
 import { VendorOffersComponent } from './components/vendor-offers/vendor-offers.component';
 import { VendorAddOffersComponent } from './components/vendor-add-offers/vendor-add-offers.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { VendorAddOffersComponent } from './components/vendor-add-offers/vendor-
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(),{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

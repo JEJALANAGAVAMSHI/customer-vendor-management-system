@@ -1,7 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { ApiResponse } from '../models/apiResponse';
 import { LoginUser } from '../models/login-user';
 
@@ -14,10 +15,17 @@ export class LoginUserService {
   private tokenKey = 'token';
   private roleKey = 'userRole';
   private role = '';
+  private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
+  loggedInStatus = this.loggedIn.asObservable();  // Exposing as an observable
+
   
 
-  constructor(private http: HttpClient, private router: Router) {}
-
+  constructor(private http: HttpClient, private router: Router, private jwtHelper: JwtHelperService) {}
+  private hasToken(): boolean {
+    const token = localStorage.getItem('token');
+    //return !!token && !this.jwtHelper.isTokenExpired(token);
+    return !!token;
+  }
   loginUser(body: LoginUser): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, body)
       .pipe(
@@ -34,7 +42,12 @@ export class LoginUserService {
     
     localStorage.removeItem('token');
     localStorage.removeItem('userRole') 
-    this.router.navigate(['/login']);
+    this.loggedIn.next(false);
+    this.router.navigate(['/']);
+  }
+
+  isAuthenticated(): boolean {
+    return this.loggedIn.getValue();
   }
 
 
@@ -46,6 +59,7 @@ export class LoginUserService {
 
   private handleLoginSuccess(response:any): void {
     if (response?.value?.token) {
+      this.loggedIn.next(true);
       localStorage.setItem(this.tokenKey, response.value.token);
       const role = response.value.roles[0];
       localStorage.setItem(this.roleKey, role);
