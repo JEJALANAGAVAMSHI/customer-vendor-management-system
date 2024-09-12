@@ -92,15 +92,12 @@ export class LoginUserService {
       // Assuming the error object has a nested error object with a statusCode property
       if (error.statusCode === 404) {
         errorMessage = 'User Not Found';
-        console.log(errorMessage)
       } else if (error.statusCode === 400) {
         errorMessage = 'Invalid Credentials';
-        console.log(errorMessage)
       } else {
         errorMessage = `Server returned code: ${error.statusCode}, error message is: ${error.message}`;
       }
     } else if (error instanceof Error) {
-      // Handling manually thrown errors in the tap block
       errorMessage = error.message;
     } else if (typeof error === 'string') {
       errorMessage = error;

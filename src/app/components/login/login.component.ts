@@ -50,33 +50,12 @@ export class LoginComponent {
       .subscribe({
       next: (response: AuthResponseDto) => {
         if (response.value.token) {
-          
-          console.log('Login successful', response);
+        
           this.errorMessage = ''
-
-          // Store the token
-          // localStorage.setItem('token', response.value.token);
-
-          // const roles = response.value.roles;
-          // if (roles.includes('Admin')) {
-          //   this.router.navigate(['/dashboard/admin']);
-          //   console.log('User is an Admin');
-          // } else if (roles.includes('User')) {
-          //   this.router.navigate(['/dashboard/resident']);
-          //   console.log('User is a Resident');
-          // }
-          // else if (roles.includes('ServiceProvider')) {
-          //   this.router.navigate(['/dashboard/serviceprovider']);
-          //   console.log('User is a ServceProvider');
-          // }
         } else {
-          if (response.statusCode === 404) {
-            this.errorMessage = 'User Not Found';
-            console.log(this.errorMessage)
-          } else if (response.statusCode === 400) {
+          if (response.statusCode === 404 || response.statusCode ===400) {
             this.errorMessage = 'Invalid Credentials';
-            console.log(this.errorMessage)
-          } else {
+          }  else {
             this.errorMessage = `Server returned code: ${response.statusCode}, error message is: ${response.value}`;
           }
           
