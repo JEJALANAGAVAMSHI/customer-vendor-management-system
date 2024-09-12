@@ -3,6 +3,11 @@ body {
   font-family: Arial, sans-serif; 
 }
 
+.bgcolor{
+  background: rgba(255, 177, 156, 1.0);
+background: radial-gradient(at left top, rgba(255, 177, 156, 1.0), rgba(230, 226, 237, 1.0));
+}
+
 .navbar {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
