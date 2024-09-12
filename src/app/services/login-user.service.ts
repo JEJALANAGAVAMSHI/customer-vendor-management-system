@@ -85,17 +85,19 @@ export class LoginUserService {
     }
   }
 
-  private handleError(error: any): Observable<never> {
+   handleError(error: any): Observable<never> {
     let errorMessage = 'An unknown error occurred!';
-  
-    if (error.error && error.error.statusCode) {
+    console.log(error)
+    if (error && error.statusCode) {
       // Assuming the error object has a nested error object with a statusCode property
-      if (error.error.statusCode === 404) {
+      if (error.statusCode === 404) {
         errorMessage = 'User Not Found';
-      } else if (error.error.statusCode === 400) {
+        console.log(errorMessage)
+      } else if (error.statusCode === 400) {
         errorMessage = 'Invalid Credentials';
+        console.log(errorMessage)
       } else {
-        errorMessage = `Server returned code: ${error.error.statusCode}, error message is: ${error.error.message}`;
+        errorMessage = `Server returned code: ${error.statusCode}, error message is: ${error.message}`;
       }
     } else if (error instanceof Error) {
       // Handling manually thrown errors in the tap block
