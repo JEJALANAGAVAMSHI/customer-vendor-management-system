@@ -1,22 +1,10 @@
-/* Page-specific styles */
-body {
-    padding-top: 60px; /* Adjusted for reduced navbar height */
-  }
-  .navbar {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1030; /* Ensures navbar stays on top */
-  }
+
   .heading-container {
     margin-top: 0; /* Removed margin to eliminate space between navbar and heading */
     margin-bottom: 20px; /* Optional: decrease margin below heading as well */
   }
   .content-wrapper {
-    padding-bottom: 60px; /* Space for footer */
+    padding-bottom: 30px; /* Space for footer */
   }
   .form-control {
     border-radius: 0.5rem;
@@ -52,4 +40,8 @@ body {
     font-weight: bold;
   }
   
+  .bgcolor{
+    background: rgba(255, 177, 156, 1.0);
+  background: radial-gradient(at left top, rgba(255, 177, 156, 1.0), rgba(230, 226, 237, 1.0));
+  }
   

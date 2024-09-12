@@ -42,25 +42,6 @@ body {
     background-color: #495057;
 }
 
-.navbar {
-    background-color: rgb(230, 77, 77);
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.navbar-brand {
-    color: #fff;
-}
-
-.navbar-nav .nav-link {
-    color: #fff;
-    font-size: medium;
-}
-
-.navbar-nav .nav-link.active {
-    font-weight: bold;
-}
-
 .main-content {
     margin-left: 270px;
     padding: 20px;

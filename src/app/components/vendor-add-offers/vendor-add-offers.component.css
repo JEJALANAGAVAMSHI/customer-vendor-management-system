@@ -115,36 +115,6 @@
     background-size: cover;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #003366;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 250px;
-    width: calc(100% - 250px);
-    z-index: 10;
-  }
-  
-  .navbar-left h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .navbar-right ul {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-right ul li a {
-    color: white;
-    font-size: 18px;
-  }
-
   .btn:hover {
     background: #ff4c39;
   }
@@ -194,9 +164,6 @@
   .btn-danger {
     background-color: #dc3545;
   }
-
-
-  /* Add to src/styles.css or relevant stylesheet */
 
 
 h2 {
