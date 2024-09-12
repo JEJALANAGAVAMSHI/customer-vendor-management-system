@@ -9,7 +9,25 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
+#map {
+    height: 200px;
+    width: 100%;
+  }
+.navbar {
+    width: 100%;
+    background-color: rgb(230, 77, 77);
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar .navbar-brand {
+    font-family: 'Cinzel', serif;
+}
 .sidebar {
     width: 250px;
     background-color: #f4f4f4;

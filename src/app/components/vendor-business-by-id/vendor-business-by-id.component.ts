@@ -70,4 +70,9 @@ export class VendorBusinessByIdComponent implements OnInit {
       this.router.navigate(['/vendor/add-service', this.business.businessId]);
     }
   }
+  navigateToAddLocation(): void {
+    if (this.business) {
+      this.router.navigate(['/vendor/add-location', this.business.businessId]);
+    }
+  }
 }

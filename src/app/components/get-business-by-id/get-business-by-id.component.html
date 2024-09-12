@@ -31,7 +31,10 @@
                         <p class="card-text">Email: {{ businesses.email }}</p>
                         <p class="card-text">Open Days: {{ businesses.dayFrom }} to {{ businesses.dayTo }}</p>
                         <p class="card-text">Open Time: {{ businesses.timeFrom }} to {{ businesses.timeTo }}</p>
-
+                        <div class="location-card">
+                            <h3>Business Location</h3>
+                            <div id="map" style="height: 200px; width: 100%;"></div>
+                          </div>
                         <h3 class="mt-4">Products</h3>
                         <div *ngIf="businesses.products && businesses.products.length > 0; else noProducts">
                             <div class="cards-container">
