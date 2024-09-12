@@ -1,4 +1,4 @@
-<!-- Add Business Content -->
+<div class="bgcolor">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
@@ -61,7 +61,6 @@
           <input type="time" class="form-control mr-2" [(ngModel)]="business.timeFrom" name="timeFrom" required>
           <input type="time" class="form-control" [(ngModel)]="business.timeTo" name="timeTo" required>
         </div>
-        <button type="button" class="btn btn-secondary btn-sm mt-2">Add Working Hours</button>
       </div>
       <div class="mb-3">
         <input type="email" class="form-control" placeholder="Enter email address" [(ngModel)]="business.email" name="email" required>
@@ -69,4 +68,5 @@
       <button type="submit" class="btn btn-danger w-100" (click)="onSubmit()">Add Business</button>
     </form>
   </div>
+</div>
 </div>
