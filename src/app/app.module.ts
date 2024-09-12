@@ -31,6 +31,7 @@ import { CustomerOffersComponent } from './components/customer-offers/customer-o
 import { VendorOffersComponent } from './components/vendor-offers/vendor-offers.component';
 import { VendorAddOffersComponent } from './components/vendor-add-offers/vendor-add-offers.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { VendorAddLocationComponent } from './components/vendor-add-location/vendor-add-location.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     VendorAddServiceComponent,
     CustomerOffersComponent,
     VendorOffersComponent,
-    VendorAddOffersComponent
+    VendorAddOffersComponent,
+    VendorAddLocationComponent
   ],
   imports: [
     BrowserModule,

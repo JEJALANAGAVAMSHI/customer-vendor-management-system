@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './components/termsofuse/termsofuse.component';
+import { VendorAddLocationComponent } from './components/vendor-add-location/vendor-add-location.component';
 import { VendorAddOffersComponent } from './components/vendor-add-offers/vendor-add-offers.component';
 import { VendorAddProductComponent } from './components/vendor-add-product/vendor-add-product.component';
 import { VendorAddServiceComponent } from './components/vendor-add-service/vendor-add-service.component';
@@ -48,7 +49,8 @@ const routes: Routes = [
   { path: 'vendor/add-service/:businessId', component: VendorAddServiceComponent },  
   { path: 'customer/offers', component : CustomerOffersComponent},
   { path : 'vendordashboard/offers/:businessId' , component : VendorOffersComponent},
-  { path : 'vendor/add-offer/:businessId', component: VendorAddOffersComponent}
+  { path : 'vendor/add-offer/:businessId', component: VendorAddOffersComponent},
+  { path : 'vendor/add-location/:businessId', component : VendorAddLocationComponent}
 ];
 
 @NgModule({

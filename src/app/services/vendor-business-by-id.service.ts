@@ -25,4 +25,9 @@ export class VendorBusinessByIdService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     return this.http.delete<void>(`${this.apiUrl}/services/${serviceId}`, { headers });
   }
+
+  addLocation(businessId: number, latitude: number, longitude: number ): Observable<void> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    return this.http.post<void>(`${this.apiUrl}/location/add`, {businessId, latitude , longitude},{headers});
+  }
 }
