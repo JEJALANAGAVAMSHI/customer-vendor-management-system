@@ -1,4 +1,22 @@
     /* Main content styling */
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-image: url('https://wallpapers.com/images/featured/rose-gold-laptop-u6istlns83r9gmom.jpg');
+      background-size: cover;  /* Ensures the image covers the entire screen */
+      background-position: center;  /* Centers the image */
+      background-repeat: no-repeat;  /* Prevents image repetition */
+      background-attachment: fixed;  /* Keeps the background fixed on scroll */
+  }
+  
+  
+  
+  body {
+      margin: 0;
+      height: 100%;
+  }
+  
+  
     .hero-section {
       padding: 30px 0;
       text-align: center;
@@ -14,7 +32,6 @@
     }
 
     .reviews-section {
-      background-color: #f8f9fa;
       padding: 30px 0;
     }
 
@@ -46,4 +63,8 @@
     .urban-unite-font {
       font-family: 'Cinzel', serif;
       font-weight: bold;
+    }
+
+    .card-body{
+      background-color:rgba(255, 148, 148, 0.4);;
     }
