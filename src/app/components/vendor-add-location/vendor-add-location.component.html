@@ -1,6 +1,7 @@
 <div>
-    <h2>Add Location for Business ID: {{ businessId }}</h2>
+    <h2>Add Location for Your Business</h2>
     <div id="map" ></div>
-    <button (click)="saveLocation()">Save Location</button> 
+    <button  class="btn btn-success" (click)="saveLocation()">Save Location</button> 
+    <button  class="btn btn-primary" routerLink="/vendordashboard/business-details/{{businessId}}">Go Back</button> 
 </div>
   

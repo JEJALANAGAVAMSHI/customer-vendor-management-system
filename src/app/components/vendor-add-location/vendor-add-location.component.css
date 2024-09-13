@@ -1,9 +1,25 @@
 body{
     padding-top: 50px;
 }
+
 #map {
-    margin-top: 80px;
+    margin-top: 35px;
     height: 400px; /* Adjust height as needed */
     width: 100%;   /* Full width of the container */
   }
   
+  h2{
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .btn-primary{
+    margin-right: 20px;
+    float: right;
+  }

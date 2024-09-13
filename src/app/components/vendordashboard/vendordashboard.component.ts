@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BusinessByIdDto } from '../../models/businessByIdDto';
+import { SidebarStateService } from '../../services/sidebar-state.service';
 import { VendorGetBusinessesService } from '../../services/vendor-get-businesses.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class VendordashboardComponent {
   loading: boolean = true;
   error: string | null = null;
 
-  constructor(private businessService: VendorGetBusinessesService, private router:Router) {}
+  constructor(private businessService: VendorGetBusinessesService, 
+    private router:Router, private sidebarStateService : SidebarStateService) {}
 
   ngOnInit(): void {
     this.loadBusinesses();
@@ -33,6 +35,7 @@ export class VendordashboardComponent {
     });
   }
   viewBusiness(businessId: number): void {
+    this.sidebarStateService.setCurrentPage('BusinessById');
     this.router.navigate(['/vendordashboard/business-details', businessId]);
   }
   deleteBusiness(businessId: number): void {
@@ -48,4 +51,5 @@ export class VendordashboardComponent {
       });
     }
   }
+  
 }

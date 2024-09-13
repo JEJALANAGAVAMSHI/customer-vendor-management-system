@@ -8,25 +8,24 @@
 <body>
     <div class="vendor-dashboard">
 
-        <div class="sidebar">
-            <nav class="sidebar-nav">
-                <ul>
-                    <h5>URBAN UNITE</h5>
+        <aside id="sidebar" class="sidebar">       
+            <ul class="sidebar-nav hover" id="sidebar-nav" >
                     <li><a routerLink="/vendordashboard">Dashboard</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#orders">Orders</a></li>
-                    <li><a href="#home">Offers</a></li>
                     <li><a routerLink="/addbusiness">Add Business</a></li>
-                    <li><a href="#logout">Log Out</a></li>
+                    <li><a routerLink="/vendor/add-product/{{this.businessId}}">Add Products</a></li>
+                    <li><a routerLink="/vendor/add-service/{{this.businessId}}">Add Services</a></li>
+                    <li><a routerLink="/vendor/add-location/{{this.businessId}}">Add Location</a></li>
+                    <li><a routerLink="/vendordashboard/offers/{{this.businessId}}">Offers</a></li>
+                    
                 </ul>
-            </nav>
-        </div>
+            
+        </aside>
 
         <div class="main-content">
             
             <div class="container" *ngIf="!isLoading">
-                <h2>Offers for Business ID: {{ businessId }}</h2>
-
+                <h2 style="text-align: center;">Offers for your Business</h2>
+                <button class="btn btn-success add-offer-btn" (click)="addOffer()">Add New Offer</button>
                 <div class="offers-container">
                   <div class="offer-card" *ngFor="let offer of offers">
                     <h3>{{ offer.offerName }}</h3>
@@ -40,7 +39,7 @@
                 <ng-template #noOffers>
                     <p>No offers available for this business.</p>
                 </ng-template>
-                <button class="btn btn-primary add-offer-btn" (click)="addOffer()">Add New Offer</button>
+                
             </div>
         </div>
     </div>

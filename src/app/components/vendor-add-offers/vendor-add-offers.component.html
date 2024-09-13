@@ -1,21 +1,21 @@
 
 <div class="vendor-dashboard">
-  <div class="sidebar">
-      <nav class="sidebar-nav">
-          <ul>
-              <h5>URBAN UNITE</h5>
-              <li><a routerLink="/vendordashboard">Dashboard</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#orders">Orders</a></li>
-              <li><a href="#home">Offers</a></li>
-              <li><a routerLink="/addbusiness">Add Business</a></li>
-              <li><a href="#logout">Log Out</a></li>
-          </ul>
-      </nav>
-  </div>
-
+    <aside id="sidebar" class="sidebar">       
+        <ul class="sidebar-nav hover" id="sidebar-nav" >
+                <li><a routerLink="/vendordashboard">Dashboard</a></li>
+                <li><a routerLink="/addbusiness">Add Business</a></li>
+                <li><a routerLink="/vendor/add-product/{{this.offer.businessId}}">Add Products</a></li>
+                <li><a routerLink="/vendor/add-service/{{this.offer.businessId}}">Add Services</a></li>
+                <li><a routerLink="/vendor/add-location/{{this.offer.businessId}}">Add Location</a></li>
+                <li><a routerLink="/vendordashboard/offers/{{this.offer.businessId}}">Offers</a></li>
+                
+            </ul>
+        
+    </aside>
   <div class="main-content">    
       <div class="container">
+        
+    
         
           <form (ngSubmit)="addOffer()" class="form">
             <h2>Add New Offer for Business ID: {{ offer.businessId }}</h2>
