@@ -1,0 +1,11 @@
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav hover" id="sidebar-nav" *ngFor="let item of menuItems">
+        
+        
+        <li><a (click)="navigateTo(item.routerLink)">{{item.label}}</a></li>
+        
+        
+    </ul>
+</aside>
+  

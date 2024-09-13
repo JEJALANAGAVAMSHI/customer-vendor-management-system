@@ -8,18 +8,17 @@
 </head>
 
 <body>
-    <aside class="sidebar">
-        <nav class="sidebar-nav">
-            <ul>
-                <h5>URBAN UNITE</h5>
+    <aside id="sidebar" class="sidebar">       
+        <ul class="sidebar-nav hover" id="sidebar-nav" >
                 <li><a routerLink="/vendordashboard">Dashboard</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#orders">Orders</a></li>
-                <li><a href="#profile">Profile</a></li>
                 <li><a routerLink="/addbusiness">Add Business</a></li>
-                <li><a href="#logout">Log Out</a></li>
+                <li><a routerLink="/vendor/add-product/{{this.businessId}}">Add Products</a></li>
+                <li><a routerLink="/vendor/add-service/{{this.businessId}}">Add Services</a></li>
+                <li><a routerLink="/vendor/add-location/{{this.businessId}}">Add Location</a></li>
+                <li><a routerLink="/vendordashboard/offers/{{this.businessId}}">Offers</a></li>
+                
             </ul>
-        </nav>
+        
     </aside>
     <div class="main-content">
         <div class="form-container">

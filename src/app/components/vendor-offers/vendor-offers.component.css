@@ -2,12 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif; */
   }
   
   body {
     background-color: #f2f2f2;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   }
   
   a {
@@ -26,65 +26,105 @@
   }
   
   .sidebar {
-    width: 250px;
-    background: linear-gradient(135deg, #6e48aa, #9d50bb);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     bottom: 0;
-    overflow-y: auto;
-    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
-    background-size: cover;
-  }
-  
-  .sidebar-header {
+    width: 250px;
+    z-index: 996;
+    transition: all 0.3s;
     padding: 20px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.3);
-    border-bottom: 2px solid #9d50bb;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #aab7cf transparent;
+    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+    background-color: #f7efee;
+
   }
   
-  .sidebar-header img {
-    max-width: 80%;
-    border-radius: 50%;
-  }
+
   
-  .sidebar-nav ul {
-    padding: 20px 0;
-  }
-  
-  .sidebar-nav ul li {
-    margin: 10px 0;
-  }
-  
-  .sidebar-nav ul li a {
+  .sidebar ul li a {
     display: block;
-    padding: 15px 20px;
-    color: black;
-    border-left: 5px solid transparent;
+    /* flex-direction: column; */
+    padding: 5px 30px;
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     transition: all 0.3s ease;
     font-size: 16px;
     position: relative;
+    text-decoration: none;
   }
   
-  .sidebar h5 {
-    color: rgb(230, 77, 77);
-    text-align: center;
-    margin-bottom: 30px;
-    font-family: 'Cinzel', serif;
+  
+  @media (max-width: 1199px) {
+    .sidebar {
+        left: -300px;
+    }
   }
   
-  .sidebar-nav ul li a:hover,
-  .sidebar-nav ul li a.active {
+  .sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #aab7cf;
+  }
+  
+  @media (min-width: 1200px) {
+    #main,
+    #footer {
+        margin-left: 300px;
+    }
+  }
+  
+  @media (max-width: 1199px) {
+    .toggle-sidebar .sidebar {
+        left: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .toggle-sidebar #main,
+    .toggle-sidebar #footer {
+        margin-left: 0;
+    }
+  
+    .toggle-sidebar .sidebar {
+        left: -300px;
+    }
+  }
+  
+  
+  .sidebar-nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .sidebar-nav li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  
+
+
+  a{
+    margin-top: 20px;
+    text-decoration: none;
+  }
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
     background: rgba(0, 0, 0, 0.2);
     border-left: 5px solid #ff6f61;
+    border-radius: 3px;
   }
   
-  .sidebar-nav ul li a::before {
+  .sidebar ul li a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -98,8 +138,8 @@
     transition: opacity 0.3s ease;
   }
   
-  .sidebar-nav ul li a:hover::before,
-  .sidebar-nav ul li a.active::before {
+  .sidebar ul li a:hover::before,
+  .sidebar ul li a.active::before {
     opacity: 1;
   }
   

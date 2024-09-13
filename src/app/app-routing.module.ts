@@ -51,6 +51,7 @@ const routes: Routes = [
   { path : 'vendordashboard/offers/:businessId' , component : VendorOffersComponent},
   { path : 'vendor/add-offer/:businessId', component: VendorAddOffersComponent},
   { path : 'vendor/add-location/:businessId', component : VendorAddLocationComponent}
+  
 ];
 
 @NgModule({
